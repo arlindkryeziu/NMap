@@ -47,3 +47,35 @@ nmap -p- 45.33.32.156
 
 nmap --open 45.33.32.156
 //scan only the open ports
+
+nmap -F -oN Desktop/results.txt 45.33.32.156
+//save results to a Normal file
+
+nmap -F -oX Desktop/results.txt 45.33.32.156
+//save results to a Xml file
+
+nmap -v 45.33.32.156
+//verbose of the scan (verbose means more till the scan happens information)
+//Increase verbosity level use -vv or more for greater effect
+
+nmap -d 45.33.32.156
+//debugging of the scan
+//Increase debugging level use -dd or more for greater effect
+
+nmap --reason -p http 45.33.32.156
+//displays the reason why a port is in the state that it is
+
+nmap --packet-trace -p http 45.33.32.156
+//shows all the packages send/recived
+
+sudo nmap -sU 45.33.32.156
+//UDP Scan
+
+sudo nmap -sS 45.33.32.156
+//TCP SYN Scan
+
+nmap --top-ports 20 45.33.32.156
+//scans top 20 (given number) ports
+
+nmap -p 1-65535 -sV -sS -T4 45.33.32.156
+//Full TCP port scan using with service version detection
