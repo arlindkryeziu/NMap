@@ -1,0 +1,49 @@
+nmap scanme.nmap.org
+
+//we are sending a package to the port and waiting for a response
+//open means is active and open to connections
+//closed it doesn't have any services running
+//filtered it is protected by a firewall
+//unfiltered not defined between closed or open
+//it only scans the 1000 mos popular ports
+
+nmap 192.168.0.106
+//scan devices in your network
+
+nmap 192.168.0.1-30
+//scan all devices from 1 to 30
+
+nmap 192.268.0.*
+//scan an entire subnet, all devices from 0 to 255
+
+nmap -iL targets.txt
+//import file, import all targets that you want to scan from a file of ip addresses
+
+nmap -A 45.33.32.156
+//Agressive scan, it gives you more detailes like traceroute, operating systen, service version etc
+
+nmap -O 45.33.32.156
+//detects only the operating system
+
+nmap --traceroute 45.33.32.156
+//trace route from your computer to 45.33.32.156 (scanme.nmap.org) server,
+//shows all the routers it used to get there (the path).
+
+nmap -sV 45.33.32.156
+//detects only the service version
+
+nmap -F 45.33.32.156
+//scans only the 100 most popular ports
+
+nmap -p 20-25,80,443 45.33.32.156
+//scan ports individualy or by range
+//ports 20 to 20, port 80 and 443
+
+nmap -p http,mysql 45.33.32.156
+//scan ports by name
+
+nmap -p- 45.33.32.156
+//scan all ports 65,536
+
+nmap --open 45.33.32.156
+//scan only the open ports
