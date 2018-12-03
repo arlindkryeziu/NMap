@@ -79,3 +79,34 @@ nmap --top-ports 20 45.33.32.156
 
 nmap -p 1-65535 -sV -sS -T4 45.33.32.156
 //Full TCP port scan using with service version detection
+
+nmap --min-rate 5000 45.33.32.156
+//sends packages no slower than 5000 packages per second
+
+nmap --max-rate 10000 45.33.32.156
+//send packages no faster than 10000 packages per second
+
+sudo nmap -sA 45.33.32.156
+//ACK scan
+
+sudo nmap -sO 45.33.32.156
+//ip protocol scan
+
+nmap -r 45.33.32.156
+//Scan ports consecutively - don't randomize
+
+nmap --port-ratio 0.2 45.33.32.156
+//Scan ports more common than 0.2
+//ratio should be between 0.0 and 1.0
+
+nmap --version-intensity 4 45.33.32.156
+//Set from 0 (light) to 9 (try all probes)
+
+nmap --version-light 45.33.32.156
+//Intensity 2, Limit to most likely probes
+
+nmap --version-all 45.33.32.156
+//Intensity 9, Try every single probe
+
+nmap --version-trace 45.33.32.156
+//Show detailed version scan activity (for debugging)
